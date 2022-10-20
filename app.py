@@ -43,12 +43,12 @@ def upload():
 
 	return render_template("complete.html", image_names=myFiles, selected_style=data)
 
-# in this function send_image will HAVE to take in the parameter name <filename>
+
 @app.route('/upload/<filename>')
 def send_original_image(filename):
 	return send_from_directory("images", filename)
 
-# this app route cant be the same as above
+
 @app.route('/complete/<filename>/<selected_style>')
 def send_processed_image(filename, selected_style):
 	directoryName = os.path.join(APP_ROOT, 'images/')
@@ -58,10 +58,10 @@ def send_processed_image(filename, selected_style):
 	return send_from_directory("images", newImg)
 
 
-#good practise to have this: this means this will only run if its run directly (and not called from somewhere else)
+
 if __name__ == "__main__":
 	#remove debug and host when hosting to cloud
 	# Add parameter host='0.0.0.0' to run on your machines IP address:
-	app.run(host='0.0.0.0')
+	app.run()
 
 
