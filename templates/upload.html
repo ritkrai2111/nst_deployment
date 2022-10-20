@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload</title>
+</head>
+<body>
+	<h1>Upload your image(s) and select a style</h1>
+	<form id="upload-form" action="{{url_for('upload')}}" method= "POST" enctype="multipart/form-data">
+		<input type="file" name="file" accept="image/*" multiple>
+		<input type="submit" value="Upload">
+		<br><br>
+
+		<div>
+			<label for="style">Choose an image style:</label>
+			<select id="style" name="style">
+				<!-- Torch pretrained models from https://github.com/ProGamerGov/Torch-Models-->
+				<!-- And also "https://cs.stanford.edu/people/jcjohns/fast-neural-style/models//instance_norm/candy.t7"-->
+				<option value="Fire_Style_22000_Iterations.t7">Fire Style</option>
+				<option value="flame_style_4500.t7">Flame Style</option>
+				<option value="landscape_style_11600.t7">Landscape Style</option>
+				<option value="rain_style_iter_4000.t7">Rain Style</option>
+				<option value="starry_night_2500.t7">Starry Night Style</option>
+				<option value="the_scream.t7">The Scream Style</option>
+				<option value="the_wave.t7">The Wave Style</option>
+	  		</select>
+		</div>
+	</form>
+</body>
+</html>
