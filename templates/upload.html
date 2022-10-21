@@ -6,14 +6,14 @@
 	<title>Upload</title>
 </head>
 <body>
-	<h1>Upload your image(s) and select a style</h1>
+	<h1>Upload your image and select a paint style</h1>
 	<form id="upload-form" action="{{url_for('upload')}}" method= "POST" enctype="multipart/form-data">
 		<input type="file" name="file" accept="image/*" multiple>
 		<input type="submit" value="Upload">
 		<br><br>
 
 		<div>
-			<label for="style">Choose an image style:</label>
+			<label for="style">Choose an paint style:</label>
 			<select id="style" name="style">
 				<!-- Torch pretrained models from https://github.com/ProGamerGov/Torch-Models-->
 				<!-- And also "https://cs.stanford.edu/people/jcjohns/fast-neural-style/models//instance_norm/candy.t7"-->
